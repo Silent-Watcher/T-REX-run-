@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+.world {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  .score {
+    position: absolute;
+    right: 1vmin;
+    top: 1vmin;
+    font-size: 3vmin;
+  }
+  .start_screen {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 5vmin;
+    transform: translate(-50%, -50%);
+  }
+  .ground {
+    --left: 0;
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    left: calc(var(--left) * 1%);
+  }
+  .dino {
+    --bottom: 0;
+    position: absolute;
+    left: 1%;
+    height: 30%;
+    bottom: calc(var(--bottom) * 1%);
+  }
+  .cactus {
+    position: absolute;
+    left: calc(var(--left) * 1%);
+    height: 30%;
+    bottom: 0;
+  }
+}
+.hide {
+  display: none;
+}
